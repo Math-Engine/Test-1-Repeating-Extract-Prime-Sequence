@@ -30,7 +30,7 @@ for i in 1:param_n
 end
 
 push!(All_Prime_Sequence, Prime_Sequence)
-println(Prime_Sequence)
+println(string(Prime_Sequence) * "\n")
 
 while true
   global Prime_Sequence
@@ -43,7 +43,7 @@ while true
   end
   Prime_Sequence = new_prime_sequence
   push!(All_Prime_Sequence, Prime_Sequence)
-  println(Prime_Sequence)
+  println(string(Prime_Sequence) * "\n")
   if length(Prime_Sequence) == 1
     break
   end
