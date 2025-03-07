@@ -24,21 +24,21 @@ Prime_Sequence = []
 
 for i in 1:param_n
   if is_prime(i) == true
-    !push(Prime_Sequence, i)
+    push!(Prime_Sequence, i)
   end
 end
 
-!push(All_Prime_Sequence, Prime_Sequence)
+push!(All_Prime_Sequence, Prime_Sequence)
 println(Prime_Sequence)
 
 while true
   new_prime_sequence = []
   for i in 1:length(Prime_Sequence)
     if is_prime(i) == true
-      !push(new_prime_sequence, Prime_Sequence[i])
+      push!(new_prime_sequence, Prime_Sequence[i])
     end
   end
   Prime_Sequence = new_prime_sequence
-  !push(All_Prime_Sequence, Prime_Sequence)
+  push!(All_Prime_Sequence, Prime_Sequence)
   println(Prime_Sequence)
 end
