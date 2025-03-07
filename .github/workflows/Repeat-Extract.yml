@@ -1,0 +1,23 @@
+name: Repeat-Extract_Test-1-Repeating-Extract-Prime-Sequence
+
+on:
+  workflow_dispatch:
+    inputs:
+      n:
+        description: 'n 이하의 소수에 대해서만 계산합니다.'
+        required: true
+        type: string
+
+run-name: Repeat-Extract - [ ${{ github.event.inputs.n }} ]
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Julia
+      uses: julia-actions/setup-julia@v2
+      with:
+        version: '1'
+    - name: Run Repeat-Extract.jl
+      run: julia Repeat-Extract.jl ${{ github.event.inputs.n }}
