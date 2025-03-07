@@ -23,6 +23,7 @@ All_Prime_Sequence = []
 Prime_Sequence = []
 
 for i in 1:param_n
+  global Prime_Sequence
   if is_prime(i) == true
     push!(Prime_Sequence, i)
   end
@@ -32,6 +33,8 @@ push!(All_Prime_Sequence, Prime_Sequence)
 println(Prime_Sequence)
 
 while true
+  global Prime_Sequence
+  global All_Prime_Sequence
   new_prime_sequence = []
   for i in 1:length(Prime_Sequence)
     if is_prime(i) == true
