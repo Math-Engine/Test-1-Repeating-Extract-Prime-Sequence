@@ -1,0 +1,44 @@
+param_n = parse(Int, ARGS[1])
+
+function is_prime(n::Int)
+  if n <= 1
+      return false
+  elseif n <= 3
+      return true
+  end
+  if n % 2 == 0 || n % 3 == 0
+      return false
+  end
+  i = 5
+  while i * i <= n
+      if n % i == 0 || n % (i + 2) == 0
+          return false
+      end
+      i = i + 6
+  end
+  return true
+end
+
+All_Prime_Sequence = []
+Prime_Sequence = []
+
+for i in 1:param_n
+  if is_prime(i) == true
+    !push(Prime_Sequence, i)
+  end
+end
+
+!push(All_Prime_Sequence, Prime_Sequence)
+println(Prime_Sequence)
+
+while true
+  new_prime_sequence = []
+  for i in 1:length(Prime_Sequence)
+    if is_prime(i) == true
+      !push(new_prime_sequence, Prime_Sequence[i])
+    end
+  end
+  Prime_Sequence = new_prime_sequence
+  !push(All_Prime_Sequence, Prime_Sequence)
+  println(Prime_Sequence)
+end
