@@ -51,7 +51,8 @@ end
 
 println("========================================================================================")
 
+println("The Number Of Sequences : " * string(length(All_Prime_Sequence)))
+
 for i in 1:length(All_Prime_Sequence)
-  println("The Number Of Sequences : " * string(length(All_Prime_Sequence)))
   print(string(length(All_Prime_Sequence[i])) * " ")
 end
