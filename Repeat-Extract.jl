@@ -44,4 +44,7 @@ while true
   Prime_Sequence = new_prime_sequence
   push!(All_Prime_Sequence, Prime_Sequence)
   println(Prime_Sequence)
+  if length(Prime_Sequence) == 1
+    break
+  end
 end
