@@ -63,6 +63,19 @@ end
 
 println("========================================================================================")
 
+Last_Primes_Array = []
+
+for i in 1:length(graph_y)
+  if (graph_y[i] in Last_Primes_Array) == false
+    push!(Last_Primes_Array, graph_y[i])
+  end
+end
+
+println("Last Primes Array")
+println(Last_Primes_Array)
+
+println("========================================================================================")
+
 # println("The Number Of Sequences : " * string(length(All_Prime_Sequence)))
 
 # for i in 1:length(All_Prime_Sequence)
