@@ -20,6 +20,6 @@ jobs:
       with:
         version: '1'
     - name: Install dependencies
-      run: julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.add("Plots")'
+      run: julia -e 'import Pkg; Pkg.add("Plots")'
     - name: Run Represent-n_p-Graph.jl
       run: julia Represent-n_p-Graph.jl ${{ github.event.inputs.n }}
